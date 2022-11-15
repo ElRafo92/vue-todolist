@@ -10,26 +10,28 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo container">
-            <img src="img/logo.png" alt="">
+    <div class="container" id="app">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Boolean">
         </div>
-    </header>
 
-    <main>
-        <div class="container">
-            <form action="" class="add-todo">
-                <input type="text">
+        <div >
+            <form class="new-todo" @submit.prevent="addTask">
+                <input type="text" v-model="newTask.text">
                 <button type="submit">Add task</button>
             </form>
-            <div class="todo-list d-flex">
-                <div class="todo-task">dfgdfgdfgdf</div>
-                <i class="fa-solid fa-x"></i>
+
+            <div class="todo-list">
+                <ul>
+                    <li class="task d-flex" v-for="task in tasks">
+                        {{task.text}}
+                        <i class="fa-solid fa-x"></i>
+                    </li>
+                </ul>
             </div>
         </div>
-    </main>
+    </div>
 
-    <footer></footer>
     <script src="js/main.js"></script>
 </body>
 </html>

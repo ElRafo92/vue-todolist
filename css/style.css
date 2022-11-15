@@ -34,13 +34,27 @@ img {
     object-fit: contain;
 }
 
-.add-todo {
+.new-todo {
     margin-top: 40px;
+
 }
+
 .todo-list {
-    justify-content: space-between;
-    margin-top: 40px;
     border-radius: 10px;
     padding: 20px;
     background-color: lightgrey;
+    margin-top: 40px;
+}
+
+li {
+    justify-content: space-between;
+    padding: 10px;
+}
+
+i {
+    cursor: pointer;
+}
+
+.task {
+    list-style: none;
 }
