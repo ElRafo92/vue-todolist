@@ -22,12 +22,13 @@
             </form>
 
             <div class="todo-list">
-                <ul>
+                <ul v-if="tasks.length > 0">
                     <li class="task d-flex" v-for="(task, index) in tasks">
                         <span :class="{done : task.done}" @click="task.done = !task.done">{{task.text}}</span>
                         <i class="fa-solid fa-x" @click="removeTask(index)"></i>
                     </li>
                 </ul>
+                <h2 v-else>U R FREE</h2>
             </div>
         </div>
     </div>

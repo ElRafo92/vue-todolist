@@ -49,6 +49,7 @@ img {
 li {
     justify-content: space-between;
     padding: 10px;
+    border-bottom: 1px solid grey;
 }
 
 i {
