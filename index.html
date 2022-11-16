@@ -16,16 +16,16 @@
         </div>
 
         <div >
-            <form class="new-todo" @submit.prevent="addTask">
-                <input type="text" v-model="newTask.text">
+            <form class="new-todo" >
+                <input type="text" >
                 <button type="submit">Add task</button>
             </form>
 
             <div class="todo-list">
                 <ul>
-                    <li class="task d-flex" v-for="task in tasks">
-                        {{task.text}}
-                        <i class="fa-solid fa-x"></i>
+                    <li class="task d-flex" v-for="(task, index) in tasks">
+                        <span :class="{done : task.done}">{{task.text}}</span>
+                        <i class="fa-solid fa-x" @click="removeTask(index)"></i>
                     </li>
                 </ul>
             </div>
