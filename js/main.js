@@ -9,12 +9,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        i: 0,
-        newTask: 
-            {
-            text:'',
-            done: false,
-            },
+        newTaskTest: '',
         
         tasks: [
           {
@@ -35,7 +30,13 @@ const { createApp } = Vue
     },
     methods: {
         addTask() {
-            this.tasks.push(this.newTask)
+            //console.log('submit')
+            const objNewTask = {
+              text: this.newTaskTest,
+              done: false,
+            };
+            this.tasks.push(objNewTask);
+            this.newTaskTest = '';
         },
         removeTask(index) {
           this.tasks.splice(index, 1);
